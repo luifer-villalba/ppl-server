@@ -1,0 +1,88 @@
+package com.swnat.model;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "postulante", schema = "management")
+public class Postulante implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column(name = "nombre")
+    private String nombre;
+
+    @Column(name = "curriculum_url")
+    private String apellido;
+
+    @Column(name = "nro_celular")
+    private String celular;
+
+    @Column(name = "desafio_url")
+    private String desafioUrl;
+
+    @Column(name = "mail")
+    private String mail;
+
+    @Column(name = "comentario")
+    private String comentario;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getDesafioUrl() {
+        return desafioUrl;
+    }
+
+    public void setDesafioUrl(String desafioUrl) {
+        this.desafioUrl = desafioUrl;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+}
