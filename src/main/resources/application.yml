@@ -21,8 +21,8 @@ spring:
       uri.sequence.value.max: 10000000
       audit.schema: audit
   datasource:
+    url: jdbc:postgresql://localhost:5432/swnat
     username: postgres
-    url: jdbc:postgresql://localhost:5432/wrdb
     password: postgres
     driver-class-name: org.postgresql.Driver
 
