@@ -1,0 +1,17 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet author="luis@softwarenatura.com" id="seed_usuario_01">
+
+        <insert tableName="usuario" schemaName="management">
+            <column name="nombre" value="Admin"/>
+            <column name="apellido" value="Admin"/>
+            <column name="email" value="luis@softwarenatura.com"/>
+            <column name="password" value="$2a$12$X3LlQDHcSjd8gS8XwjmaseDcfBhxvxWteO98bKeeO56spSIPo5e5O"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

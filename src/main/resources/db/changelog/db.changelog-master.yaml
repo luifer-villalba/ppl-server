@@ -1,3 +1,7 @@
 databaseChangeLog:
   - include:
       file: db/changelog/ppldb/20190109_POSTULANTE_CT.xml
+  - include:
+      file: db/changelog/ppldb/20190110_USUARIO_CT.xml
+  - include:
+      file: db/changelog/seed/20190110_USUARIO_INICIAL_01.xml

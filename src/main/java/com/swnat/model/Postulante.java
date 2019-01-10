@@ -10,7 +10,7 @@ public class Postulante implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "nombre")
     private String nombre;
@@ -30,11 +30,11 @@ public class Postulante implements Serializable {
     @Column(name = "comentario")
     private String comentario;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

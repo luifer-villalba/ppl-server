@@ -5,8 +5,8 @@
 
     <changeSet author="luis@softwarenatura.com" id="ppl_postulante_ct_001">
         <createTable tableName="postulante" schemaName="management">
-            <column name="id" type="INTEGER">
-                <constraints nullable="false"/>
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="nombre" type="VARCHAR">
                 <constraints nullable="false"/>
@@ -30,7 +30,6 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-
-        <addPrimaryKey tableName="postulante" constraintName="postulante_id" columnNames="id" schemaName="management"/>
     </changeSet>
+
 </databaseChangeLog>

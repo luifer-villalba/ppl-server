@@ -31,7 +31,7 @@ public class PostulanteServiceImpl implements PostulanteService {
 
         PaginationResponse<Postulante> response = new PaginationResponse<>();
         response.setContent(searchResult.getContent());
-        response.setTotalCount(searchResult.getTotalElements());
+        response.setCount(searchResult.getTotalElements());
         return response;
     }
 

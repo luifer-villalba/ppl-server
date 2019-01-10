@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PostulanteRepository extends JpaRepository<Postulante, Integer> {
+public interface PostulanteRepository extends JpaRepository<Postulante, Long> {
 
     /**
      * Obtener el listado de postulantes por alguno de los criterios siguientes:
