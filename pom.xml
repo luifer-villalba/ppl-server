@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.swnat</groupId>
     <artifactId>ppl-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1.2</version>
     <name>ppl-server</name>
     <description>Server for People Management</description>
 
@@ -45,7 +45,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>RELEASE</version>
+            <version>9.4.1212.jre7</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

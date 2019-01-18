@@ -15,19 +15,19 @@
                 <constraints nullable="false"/>
             </column>
             <column name="curriculum_url" type="VARCHAR">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="nro_celular" type="VARCHAR">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="desafio_url" type="VARCHAR">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="mail" type="VARCHAR">
                 <constraints nullable="false"/>
             </column>
             <column name="comentario" type="VARCHAR">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
         </createTable>
     </changeSet>

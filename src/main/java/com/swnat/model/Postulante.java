@@ -15,8 +15,14 @@ public class Postulante implements Serializable {
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "curriculum_url")
+    @Column(name = "apellido")
     private String apellido;
+
+    @Column(name = "documento")
+    private String documento;
+
+    @Column(name = "curriculum_url")
+    private String curriculumUrl;
 
     @Column(name = "nro_celular")
     private String celular;
@@ -54,6 +60,14 @@ public class Postulante implements Serializable {
         this.apellido = apellido;
     }
 
+    public String getCurriculumUrl() {
+        return curriculumUrl;
+    }
+
+    public void setCurriculumUrl(String curriculumUrl) {
+        this.curriculumUrl = curriculumUrl;
+    }
+
     public String getCelular() {
         return celular;
     }
@@ -84,5 +98,13 @@ public class Postulante implements Serializable {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
     }
 }

@@ -8,7 +8,7 @@ public class PaginationResponse<T extends Serializable> implements Serializable 
     private static final long serialVersionUID = 1620916850610428597L;
 
     private List<T> content;
-    private Long count;
+    private Long totalCount;
 
     public List<T> getContent() {
         return content;
@@ -18,11 +18,12 @@ public class PaginationResponse<T extends Serializable> implements Serializable 
         this.content = content;
     }
 
-    public Long getCount() {
-        return count;
+    public Long getTotalCount() {
+        return totalCount;
     }
 
-    public void setCount(Long count) {
-        this.count = count;
+    public void setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
     }
 }
+

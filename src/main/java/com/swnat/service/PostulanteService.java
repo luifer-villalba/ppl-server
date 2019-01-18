@@ -3,7 +3,7 @@ package com.swnat.service;
 import com.swnat.dto.PaginationResponse;
 import com.swnat.model.Postulante;
 
-public interface PostulanteService {
+public interface PostulanteService extends IGenericService<Postulante, Long> {
 
     /**
      * Trae los registros que entren en el filtro
