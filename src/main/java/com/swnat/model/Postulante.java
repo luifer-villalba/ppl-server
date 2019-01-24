@@ -36,6 +36,9 @@ public class Postulante implements Serializable {
     @Column(name = "comentario")
     private String comentario;
 
+    @Column(name = "estado")
+    private String estado;
+
     public Long getId() {
         return id;
     }
@@ -98,6 +101,14 @@ public class Postulante implements Serializable {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getDocumento() {

@@ -31,6 +31,9 @@ public class Usuario implements Serializable {
     @Column(name = "activo")
     private boolean activo;
 
+    @Column(name = "rol")
+    private String rol;
+
     public Long getIdUsuario() {
         return id;
     }
@@ -79,6 +82,14 @@ public class Usuario implements Serializable {
 
     public boolean isActivo() {
         return activo;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
 }
