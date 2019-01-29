@@ -1,6 +1,9 @@
 package com.swnat.service;
 
 import com.swnat.model.Usuario;
+import com.swnat.dto.PaginationResponse;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import com.swnat.repository.UsuarioRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -25,8 +28,20 @@ public class UsuarioServiceImpl extends GenericService<Usuario, Long> implements
     }
 
     @Override
-    public List<Usuario> findById(Long id) {
-        return usuarioRepository.findUsuarioById(id);
+    public PaginationResponse<Usuario> findByFilter(String filter, int page, int size) {
+        Page<Usuario> searchResult;
+        PageRequest pageRequest = PageRequest.of(page, size);
+
+        if (filter == null || filter.isEmpty()) {
+            searchResult = usuarioRepository.findAll(pageRequest);
+        } else {
+            searchResult = usuarioRepository.findAllByNombreContainsOrApellidoContains(filter, pageRequest);
+        }
+
+        PaginationResponse<Usuario> response = new PaginationResponse<>();
+        response.setContent(searchResult.getContent());
+        response.setTotalCount(searchResult.getTotalElements());
+        return response;
     }
 
 }

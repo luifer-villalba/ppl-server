@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -34,13 +33,14 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     Page<Usuario> findAllByNombreContainsOrApellidoContainsOrEmailContains(String nombre, String apellido,
                                                                                        String correoElectronico,
                                                                                        Pageable pageable);
-
     /**
-     * Obtener los datos de usuario por id
+     * Obtener el listado de postulantes por alguno de los criterios siguientes:
+     * nombre, apellido
      *
-     * @return {@link <Usuario>}
+     * @return {@link Page <Usuario>}
      */
-    @Query("select p from Usuario p where usuario_id like %:id%")
-    List<Usuario> findUsuarioById(@Param("id") Long id);
+    @Query("select p from Usuario p where concat(nombre,' ',apellido) like %:filtro% or email like %:filtro% or rol like %:filtro%")
+    Page<Usuario> findAllByNombreContainsOrApellidoContains(@Param("filtro") String nombre, Pageable pageable);
+
 
 }
