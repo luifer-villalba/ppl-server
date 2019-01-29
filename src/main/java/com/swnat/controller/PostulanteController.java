@@ -35,5 +35,11 @@ public class PostulanteController {
     public Postulante updatePostulante(@Valid @RequestBody Postulante postulante, @PathVariable Long id) {
         return postulanteService.update(id, postulante);
     }
+
+    @ApiOperation(value = "Obtener un postulante", notes = "Obtiene un postulante.")
+    @GetMapping("/{id}")
+    public Postulante getPostulante(@PathVariable Long id) {
+        return postulanteService.getOne(id);
+    }
     
 }
