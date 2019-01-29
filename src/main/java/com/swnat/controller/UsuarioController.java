@@ -6,10 +6,6 @@ import com.swnat.service.UsuarioService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
-import javax.validation.Valid;
-
 @RestController
 @RequestMapping("/api/v1/usuario")
 public class UsuarioController {

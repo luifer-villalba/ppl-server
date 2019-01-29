@@ -39,6 +39,18 @@ public class Postulante implements Serializable {
     @Column(name = "estado")
     private String estado;
 
+    @Column(name = "comentario_desafio")
+    private String comentarioDesafio;
+
+    @Column(name = "comentario_sm")
+    private String comentarioSm;
+
+    @Column(name = "comentario_admin")
+    private String comentarioAdmin;
+
+    @Column(name = "comentario_team")
+    private String comentarioTeam;
+
     public Long getId() {
         return id;
     }
@@ -117,5 +129,37 @@ public class Postulante implements Serializable {
 
     public void setDocumento(String documento) {
         this.documento = documento;
+    }
+
+    public String getComentarioDesafio() {
+        return comentarioDesafio;
+    }
+
+    public void setComentarioDesafio(String comentarioDesafio) {
+        this.comentarioDesafio = comentarioDesafio;
+    }
+
+    public String getComentarioSm() {
+        return comentarioSm;
+    }
+
+    public void setComentarioSm(String comentarioSm) {
+        this.comentarioSm = comentarioSm;
+    }
+
+    public String getComentarioAdmin() {
+        return comentarioAdmin;
+    }
+
+    public void setComentarioAdmin(String comentarioAdmin) {
+        this.comentarioAdmin = comentarioAdmin;
+    }
+
+    public String getComentarioTeam() {
+        return comentarioTeam;
+    }
+
+    public void setComentarioTeam(String comentarioTeam) {
+        this.comentarioTeam = comentarioTeam;
     }
 }
