@@ -16,4 +16,12 @@ public interface UsuarioService extends IGenericService<Usuario, Long> {
      */
     PaginationResponse<Usuario> findByFilter(String filter, int page, int size);
 
+    /**
+     * Edita un usuario, ignorando la contraseña
+     * @param id
+     * @param usuario
+     * @return
+     */
+    Usuario editUser(Long id, Usuario usuario);
+
 }

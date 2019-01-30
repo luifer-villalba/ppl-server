@@ -1,6 +1,8 @@
 package com.swnat.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import javax.persistence.*;
@@ -62,6 +64,7 @@ public class Usuario implements Serializable {
         return clave;
     }
 
+    @JsonProperty
     public void setClave(String clave) {
         String salt = BCrypt.gensalt(12);
         this.clave = BCrypt.hashpw(clave, salt);

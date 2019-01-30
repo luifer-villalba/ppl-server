@@ -9,8 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 
 @Service
 @Transactional
@@ -42,6 +40,19 @@ public class UsuarioServiceImpl extends GenericService<Usuario, Long> implements
         response.setContent(searchResult.getContent());
         response.setTotalCount(searchResult.getTotalElements());
         return response;
+    }
+
+    @Override
+    public Usuario editUser(Long id, Usuario usuario){
+        Usuario user = this.getOne(id);
+        user.setNombre(usuario.getNombre());
+        user.setApellido(usuario.getApellido());
+        user.setEmail(usuario.getEmail());
+        user.setRol(usuario.getRol());
+        user.setActivo(usuario.isActivo());
+
+        return this.update(id, user);
+
     }
 
 }
