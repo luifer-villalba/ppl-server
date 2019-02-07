@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/postulante")
+@RequestMapping("/api/v1/postulantes")
 public class PostulanteController {
 
     private PostulanteService postulanteService;
@@ -34,6 +34,12 @@ public class PostulanteController {
     @PutMapping("/{id}")
     public Postulante updatePostulante(@Valid @RequestBody Postulante postulante, @PathVariable Long id) {
         return postulanteService.update(id, postulante);
+    }
+
+    @ApiOperation(value = "Obtener un postulante", notes = "Obtiene un postulante.")
+    @GetMapping("/{id}")
+    public Postulante getPostulante(@PathVariable Long id) {
+        return postulanteService.getOne(id);
     }
     
 }

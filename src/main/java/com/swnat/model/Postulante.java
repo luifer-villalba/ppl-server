@@ -2,6 +2,7 @@ package com.swnat.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "postulante", schema = "management")
@@ -21,6 +22,15 @@ public class Postulante implements Serializable {
     @Column(name = "documento")
     private String documento;
 
+    @Column(name = "fecha_de_nacimiento")
+    private Date fechaDeNacimiento;
+
+    @Column(name = "direccion")
+    private String direccion;
+
+    @Column(name = "genero")
+    private String genero;
+    
     @Column(name = "curriculum_url")
     private String curriculumUrl;
 
@@ -35,6 +45,21 @@ public class Postulante implements Serializable {
 
     @Column(name = "comentario")
     private String comentario;
+
+    @Column(name = "estado")
+    private String estado;
+
+    @Column(name = "comentario_desafio")
+    private String comentarioDesafio;
+
+    @Column(name = "comentario_sm")
+    private String comentarioSm;
+
+    @Column(name = "comentario_admin")
+    private String comentarioAdmin;
+
+    @Column(name = "comentario_team")
+    private String comentarioTeam;
 
     public Long getId() {
         return id;
@@ -58,6 +83,30 @@ public class Postulante implements Serializable {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public Date getFechaDeNacimiento() {
+        return fechaDeNacimiento;
+    }
+
+    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+        this.fechaDeNacimiento = fechaDeNacimiento;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public String getCurriculumUrl() {
@@ -100,11 +149,51 @@ public class Postulante implements Serializable {
         this.comentario = comentario;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     public String getDocumento() {
         return documento;
     }
 
     public void setDocumento(String documento) {
         this.documento = documento;
+    }
+
+    public String getComentarioDesafio() {
+        return comentarioDesafio;
+    }
+
+    public void setComentarioDesafio(String comentarioDesafio) {
+        this.comentarioDesafio = comentarioDesafio;
+    }
+
+    public String getComentarioSm() {
+        return comentarioSm;
+    }
+
+    public void setComentarioSm(String comentarioSm) {
+        this.comentarioSm = comentarioSm;
+    }
+
+    public String getComentarioAdmin() {
+        return comentarioAdmin;
+    }
+
+    public void setComentarioAdmin(String comentarioAdmin) {
+        this.comentarioAdmin = comentarioAdmin;
+    }
+
+    public String getComentarioTeam() {
+        return comentarioTeam;
+    }
+
+    public void setComentarioTeam(String comentarioTeam) {
+        this.comentarioTeam = comentarioTeam;
     }
 }

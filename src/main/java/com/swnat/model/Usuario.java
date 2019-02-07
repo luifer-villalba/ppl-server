@@ -1,11 +1,12 @@
 package com.swnat.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 @Table(name = "usuario", schema = "management")
@@ -30,6 +31,9 @@ public class Usuario implements Serializable {
 
     @Column(name = "activo")
     private boolean activo;
+
+    @Column(name = "rol")
+    private String rol;
 
     public Long getIdUsuario() {
         return id;
@@ -60,6 +64,7 @@ public class Usuario implements Serializable {
         return clave;
     }
 
+    @JsonProperty
     public void setClave(String clave) {
         String salt = BCrypt.gensalt(12);
         this.clave = BCrypt.hashpw(clave, salt);
@@ -79,6 +84,14 @@ public class Usuario implements Serializable {
 
     public boolean isActivo() {
         return activo;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
 }
