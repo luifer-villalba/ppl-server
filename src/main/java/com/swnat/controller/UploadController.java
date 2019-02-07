@@ -17,7 +17,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
 @RestController
-@RequestMapping("/api/v1/upload")
+@RequestMapping("/api/v1/uploads")
 public class UploadController {
 
     //Save the uploaded file to this folder

@@ -1,15 +1,20 @@
 package com.swnat.controller;
 
 import com.swnat.model.Usuario;
+import com.swnat.dto.MessageDTO;
 import com.swnat.dto.PaginationResponse;
 import com.swnat.service.UsuarioService;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.Response;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/usuario")
+@RequestMapping("/api/v1/usuarios")
 public class UsuarioController {
 
     private UsuarioService usuarioService;
@@ -40,6 +45,16 @@ public class UsuarioController {
     @PutMapping("/{id}")
     public Usuario updateUsuario(@Valid @RequestBody Usuario usuario, @PathVariable Long id) {
         return usuarioService.editUser(id, usuario);
+    }
+
+    @ApiOperation(value = "Cambiar contraseña", notes = "Actualiza la contraseña de un usuario")
+    @PutMapping("/{id}/change-password")
+    public ResponseEntity updatePassword(@Valid @RequestBody String password, @PathVariable Long id) {
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(usuarioService.editUserPassword(id, password));
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.OK).body(new MessageDTO("error"));
+        }
     }
     
 }

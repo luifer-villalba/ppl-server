@@ -2,6 +2,7 @@ package com.swnat.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Table(name = "postulante", schema = "management")
@@ -21,6 +22,15 @@ public class Postulante implements Serializable {
     @Column(name = "documento")
     private String documento;
 
+    @Column(name = "fecha_de_nacimiento")
+    private Date fechaDeNacimiento;
+
+    @Column(name = "direccion")
+    private String direccion;
+
+    @Column(name = "genero")
+    private String genero;
+    
     @Column(name = "curriculum_url")
     private String curriculumUrl;
 
@@ -73,6 +83,30 @@ public class Postulante implements Serializable {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public Date getFechaDeNacimiento() {
+        return fechaDeNacimiento;
+    }
+
+    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+        this.fechaDeNacimiento = fechaDeNacimiento;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public String getCurriculumUrl() {

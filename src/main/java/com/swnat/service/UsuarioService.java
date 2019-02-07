@@ -3,6 +3,10 @@ package com.swnat.service;
 import java.util.List;
 
 import com.swnat.model.Usuario;
+
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.swnat.dto.MessageDTO;
 import com.swnat.dto.PaginationResponse;
 
 public interface UsuarioService extends IGenericService<Usuario, Long> {
@@ -24,4 +28,5 @@ public interface UsuarioService extends IGenericService<Usuario, Long> {
      */
     Usuario editUser(Long id, Usuario usuario);
 
+    MessageDTO editUserPassword(Long id, String password);
 }
